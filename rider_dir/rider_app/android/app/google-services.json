@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "686941322070",
+    "firebase_url": "https://linode-master-default-rtdb.firebaseio.com",
+    "project_id": "linode-master",
+    "storage_bucket": "linode-master.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686941322070:android:21c36555d9b06be16034f7",
+        "android_client_info": {
+          "package_name": "com.mclean.client_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686941322070-r2avfhnjd3fpdj7o7tss2jg6of767qt3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk4eS8lJMCWkrpUmA7lKHoOYjNT8k8ANE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686941322070-r2avfhnjd3fpdj7o7tss2jg6of767qt3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686941322070:android:bfb62beeb04983c56034f7",
+        "android_client_info": {
+          "package_name": "com.mclean.rider_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686941322070-r2avfhnjd3fpdj7o7tss2jg6of767qt3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk4eS8lJMCWkrpUmA7lKHoOYjNT8k8ANE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686941322070-r2avfhnjd3fpdj7o7tss2jg6of767qt3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

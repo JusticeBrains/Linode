@@ -1,0 +1,52 @@
+// user authentication
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:rider_app/globalvariable.dart';
+import 'package:rider_app/methods/input.dart';
+import 'package:rider_app/methods/toastmessages.dart';
+import 'package:rider_app/screens/mainscreen.dart';
+import 'package:rider_app/screens/vehicleinfo.dart';
+import 'package:rider_app/widgets/progress_dialog.dart';
+
+// final FirebaseAuth auth = FirebaseAuth.instance;
+// add user method
+Future<void> addNewUser(BuildContext context) async {
+  showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext context) => ProgressDialog("Registering ....."));
+  User? userCredential = (await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
+              email: emailTextEditingController.text,
+              password: passwordTextEditingController.text)
+          .catchError((err) {
+    Navigator.pop(context);
+    PlatformException thisErr = err;
+    displayToastMessage(thisErr.toString(), context);
+  }))
+      .user;
+  Navigator.pop(context);
+  // check if credentials not null
+  if (userCredential != null) {
+    // Save  user data to database
+    Map userMap = {
+      'fullname': nameTextEditingController.text,
+      'email': emailTextEditingController.text,
+      'phone': phonenumberTextEditingController.text,
+      'password': passwordTextEditingController.hashCode,
+    };
+
+    displayToastMessage("Registration Successfull", context);
+    DatabaseReference databaseReference = FirebaseDatabase.instance
+        .reference()
+        .child('drivers/${userCredential.uid}');
+    databaseReference.set(userMap);
+
+    currentFirebaseUser = userCredential;
+    // Send user to main scree
+    Navigator.pushNamed(context, Motorinfo.id);
+  }
+}
